@@ -59,7 +59,12 @@ function About() {
 }
 
 // 遊戲卡片組件
-function GameCard({ title, description }) {
+interface GameCardProps {
+  title: string;
+  description: string;
+}
+
+function GameCard({ title, description }: GameCardProps) {
   return (
     <div className="game-card">
       <div className="game-image"></div>
@@ -202,6 +207,7 @@ function Footer() {
     </footer>
   );
 }
+
 
 
 // 完整的 React 應用
