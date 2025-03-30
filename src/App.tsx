@@ -1,5 +1,6 @@
 // import React from 'react';
 import Games from './Games.tsx';
+import Hero from "./Hero.tsx"; // 新增動態橫幅
 
 function App() {
   return (
@@ -25,17 +26,6 @@ function Navbar() {
         <a href="#contact">聯絡我們</a>
       </div>
     </nav>
-  );
-}
-
-// Hero區域組件
-function Hero() {
-  return (
-    <section className="hero">
-      <h1>歡迎來到任地獄</h1>
-      <p>探索前所未見的遊戲體驗，挑戰你的極限，踏入遊戲的粉紅深淵</p>
-      <button className="hero-btn">探索遊戲</button>
-    </section>
   );
 }
 
