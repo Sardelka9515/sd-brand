@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import "./Hero.css";
 
 const images = [
@@ -10,7 +10,7 @@ const images = [
 
 function Hero() {
   const [currentIndex, setCurrentIndex] = useState(0);
-  let intervalId: NodeJS.Timeout;
+  let intervalId: ReturnType<typeof setTimeout>;
 
   // 自動切換圖片
   useEffect(() => {
