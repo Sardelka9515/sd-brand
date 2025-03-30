@@ -175,8 +175,11 @@ body {
 }
 
 .game-image {
-  height: 200px;
-  background: linear-gradient(rgba(255, 105, 180, 0.2), rgba(255, 105, 180, 0.2)), url('/api/placeholder/400/200') center/cover no-repeat;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  border-bottom: 1px solid #555;
+  display: block;
 }
 
 .game-info {

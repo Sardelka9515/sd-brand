@@ -3,22 +3,23 @@ import { useState } from 'react';
 
 // 遊戲卡片組件
 interface GameCardProps {
-    title: string;
-    description: string;
-  }
-  
-  function GameCard({ title, description }: GameCardProps) {
-    return (
-      <div className="game-card">
-        <div className="game-image"></div>
-        <div className="game-info">
-          <h3>{title}</h3>
-          <p>{description}</p>
-          <a href="#" className="game-btn">瞭解更多</a>
-        </div>
+  title: string;
+  description: string;
+  image: string;
+}
+
+function GameCard({ title, description, image }: GameCardProps) {
+  return (
+    <div className="game-card">
+      <img src={image} alt={title} className="game-image" />
+      <div className="game-info">
+        <h3>{title}</h3>
+        <p>{description}</p>
+        <a href="#" className="game-btn">瞭解更多</a>
       </div>
-    );
-  }
+    </div>
+  );
+}
   
   // 遊戲區域組件
   function Games() {
@@ -26,22 +27,26 @@ interface GameCardProps {
       {
         title: "魔域迷宮",
         description: "一款極具挑戰性的地牢探險遊戲，玩家需要在無盡的迷宮中生存並找到出路。",
-        category: "冒險"
+        category: "冒險",
+        image: "/images/games/maze.jpg"
       },
       {
         title: "粉紅戰士",
         description: "一款動作角色扮演遊戲，玩家將在粉紅世界中面臨殘酷的戰鬥和道德抉擇。",
-        category: "動作"
+        category: "動作",
+        image: "/images/games/pink-warrior.jpg"
       },
       {
         title: "深淵之聲",
         description: "一款心理恐怖遊戲，探索人類內心最深處的恐懼，融合粉紅色的夢境與噩夢。",
-        category: "恐怖"
+        category: "恐怖",
+        image: "/images/games/abyss.jpg"
       },
       {
         title: "甜蜜求生",
         description: "在糖果末日後的世界中求生存，與其他玩家競爭有限的甜蜜資源。",
-        category: "生存"
+        category: "生存",
+        image: "/images/games/sweet-survival.jpg"
       }
     ];
 
@@ -86,11 +91,17 @@ interface GameCardProps {
         {/* 遊戲清單 */}
         <div className="games-grid">
           {filteredGames.map((game, index) => (
-            <GameCard key={index} title={game.title} description={game.description} />
+            <GameCard   
+              key={index}
+              title={game.title}
+              description={game.description}
+              image={game.image} 
+            />
           ))}
           {filteredGames.length === 0 && (
             <p style={{ color: '#ccc', fontStyle: 'italic' }}>找不到符合的遊戲。</p>
           )}
+
         </div>
       </div>
     </section>
