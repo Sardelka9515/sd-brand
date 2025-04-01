@@ -29,6 +29,11 @@ function Hero() {
 
   return (
     <section className="hero">
+      <div className="hero-content">
+        <h1>歡迎來到任地獄</h1>
+        <p>探索前所未見的遊戲體驗，挑戰你的極限，踏入遊戲的粉紅深淵</p>
+        <button className="hero-btn" onClick={() => document.getElementById('games')?.scrollIntoView({ behavior: 'smooth' })}>探索遊戲</button>
+      </div>
       <div className="carousel">
         <a target="_blank" rel="noopener noreferrer">
           <img src={images[currentIndex].src} alt={`幻燈片 ${currentIndex + 1}`} className="carousel-image" />
