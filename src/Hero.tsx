@@ -30,7 +30,7 @@ function Hero() {
   return (
     <section className="hero">
       <div className="carousel">
-        <a href={images[currentIndex].link} target="_blank" rel="noopener noreferrer">
+        <a target="_blank" rel="noopener noreferrer">
           <img src={images[currentIndex].src} alt={`幻燈片 ${currentIndex + 1}`} className="carousel-image" />
         </a>
         <div className="carousel-indicators">
